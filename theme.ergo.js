@@ -16,7 +16,7 @@ module.exports = {
 		author_url: '/authors.html',
 		tags_url: '/tags.html',
 		categories_url: '/categories.html',
-		feed_url: '/rss.html'
+		feed_url: '/rss.xml'
 
 	}
 };
