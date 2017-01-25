@@ -1,0 +1,84 @@
+{{> header.inc }}
+
+	<!-- Intro -->
+	<section>
+		{{{content}}}
+	</section>
+
+<!-- Big Post -->
+{{#featured @{len:3} }}
+	<article class="post">
+		<header>
+			<div class="title">
+				<h2><a href="/{{uri}}">{{title}}</a></h2>
+				<p>{{^subtitle}}{{metadesc}}{{/subtitle}}{{subtitle}}</p>
+			</div>
+			<div class="meta">
+				<time class="published" datetime="{{date}}">{{date.formatted}}</time>
+				<a href="{{author_url}}#{{author}}" class="author"><span class="name">{{author}}</span><img src="/images/{{author_image}}" alt="" /></a>
+			</div>
+		</header>
+		<a href="/{{uri}}" class="image featured"><img src="images/{{image {image:'post.jpg'} }}" alt="" /></a>
+		{{{short_content}}}
+		<footer>
+			<ul class="actions">
+				<li><a href="/{{uri}}" class="button big">Continue Reading</a></li>
+			</ul>
+			<ul class="stats">
+			{{#categories}}<li>{{#. @split}}<a href="{{categories_url}}#{{.}}">{{.}}</a> {{/.}}</li>{{/categories}}
+			{{#tags}}<li>{{#. @split}}<a href="{{tags_url}}#{{.}}">{{.}}</a> {{/.}}</li>{{/tags}}
+			</ul>
+		</footer>
+	</article>{{/featured}}
+
+
+
+
+	</div> <!-- /main -->
+
+	<!-- Sidebar -->
+	<div id="sidebar">
+		<!-- Mini Posts -->
+			<section>
+				<div class="mini-posts">
+
+					{{#popular @{len:6} }}<!-- Mini Post -->
+						<article class="mini-post">
+							<header>
+								<h3><a href="/{{uri}}">{{title}}</a></h3>
+								<time class="published" datetime="{{date}}">{{date.formatted}}</time>
+								<a href="{{author_url}}#{{author}}" class="author"><span class="name">{{author}}</span><img src="/images/{{author_image}}" alt="" /></a>
+							</header>
+							<a href="/{{uri}}" class="image"><img src="/images/{{image {image:'post.jpg'} }}" alt="" /></a>
+						</article>{{/popular}}
+				</div>
+			</section>	
+
+		<!-- Posts List -->
+			<section>
+				<ul class="posts">{{#blog @{len:10} }}
+					<li>
+						<article>
+							<header>
+								<h3><a href="/{{uri}}">{{title}}</a></h3>
+								<time class="published" datetime="{{date}}">{{date.formatted}}</time>
+								<a href="{{author_url}}#{{author}}" class="author"><span class="name">{{author}}</span><img src="/images/{{author_image}}" alt="" /></a>
+							</header>
+							<a href="/{{uri}}" class="image"><img src="/images/{{image {image:'post.jpg'} }}" alt="" /></a>
+						</article>
+					</li>{{/blog}}
+
+				</ul>
+			</section>
+
+		<!-- About -->
+			<section class="blurb">
+				{{>home_about}}
+				<ul class="actions">
+					<li><a href="/about.html" class="button">Learn More</a></li>
+				</ul>
+			</section>
+
+
+
+{{> footer.inc }}							

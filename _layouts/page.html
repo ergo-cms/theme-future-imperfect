@@ -1,0 +1,20 @@
+{{> header.inc }}
+
+<article class="post">
+	<header>
+		<div class="title">
+			<h2><a href="/{{uri}}">{{title}}</a></h2>
+			<p>{{^subtitle}}{{metadesc}}{{/subtitle}}{{subtitle}}</p>
+		</div>
+	</header>
+	<span class="image featured"><img src="/images/{{image {image:'page.jpg'} }}" alt="" /></span>
+	{{{content}}}
+	<footer>
+		<ul class="stats">
+			{{#categories}}<li>{{#. @split}}<a href="{{categories_url}}#{{.}}">{{.}}</a> {{/.}}</li>{{/categories}}
+			{{#tags}}<li>{{#. @split}}<a href="{{tags_url}}#{{.}}">{{.}}</a> {{/.}}</li>{{/tags}}
+		</ul>
+		
+	</footer></article>
+
+{{> footer.inc }}

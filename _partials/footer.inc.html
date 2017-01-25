@@ -1,0 +1,29 @@
+			<!-- Footer -->
+	<section id="footer">
+		<ul class="icons">
+			{{#feed_url}}<li><a href="{{rss_url}}" class="fa-rss"><span class="label">RSS</span></a></li>{{/feed_url}}
+			{{#social.twitter}}<li><a href="https://twitter.com/{{social.twitter}}" class="fa-twitter"><span class="label">Twitter</span></a></li>{{/social.twitter}}
+			{{#social.facebook}}<li><a href="https://facebook.com/{{social.facebook}}" class="fa-facebook"><span class="label">Facebook</span></a></li>{{/social.facebook}}
+			{{#social.linkedin}}<li><a href="https://linkedin.com/{{{social.linkedin}}}" class="fa-linkedin"><span class="label">Linked In</span></a></li>{{/social.linkedin}}
+			{{#social.instagram}}<li><a href="https://instagram.com/{{social.instagram}}" class="fa-instagram"><span class="label">Instagram</span></a></li>{{/social.instagram}}
+			{{#social.pinterest}}<li><a href="https://pinterest.com/{{{social.pinterest}}}" class="fa-pinterest"><span class="label">Pinterest</span></a></li>{{/social.pinterest}}
+			{{#social.github}}<li><a href="https://github.com/{{{social.github}}}" class="fa-github"><span class="label">Github</span></a></li>{{/social.github}}
+			{{#social.email}}<li><a href="mailto:{{social.email}}" class="fa-envelope"><span class="label">Email</span></a></li>{{/social.email}}
+		</ul>
+		<p class="copyright">{{>footer_text}}</p>
+	</section>
+
+</div>
+
+
+</div>
+
+<!-- Scripts -->
+<script src="/assets/js/jquery.min.js"></script>
+<script src="/assets/js/skel.min.js"></script>
+<script src="/assets/js/util.js"></script>
+<!--[if lte IE 8]><script src="/assets/js/ie/respond.min.js"></script><![endif]-->
+<script src="/assets/js/main.js"></script>
+
+</body>
+</html>

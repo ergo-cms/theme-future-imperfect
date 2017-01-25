@@ -1,0 +1,26 @@
+{{>header.inc }}
+<h1>{{title}}</h1>
+{{^list_hide_content }}
+	<section id="intro">
+		{{{content}}}
+	</section>
+{{/list_hide_content}}
+
+{{#dynamic_list}}
+<section>
+	<div class="mini-posts">
+		<h2 id="{{key}}"><a href="#{{key}}">{{key}}</a></h2>
+		{{#value}}
+		<!-- Mini Post -->
+			<article class="mini-post">
+				<header>
+					<h3><a href="/{{uri}}">{{title}}</a></h3>
+					<time class="published" datetime="{{date}}">{{date.formatted}}</time>
+					<a href="{{author_url}}#{{author}}" class="author"><img src="/images/{{author_image}}" alt="" /></a>
+				</header>
+				<a href="/{{uri}}" class="image"><img src="/images/{{image {image:'post.jpg'} }}" alt="" /></a>
+			</article>{{/value}}
+	</div>
+</section>{{/dynamic_list}}
+
+{{> footer.inc }}
