@@ -8,13 +8,12 @@
 
 <section>
 	<div class="mini-posts">
-
 		{{#dynamic_list}}<!-- Mini Post -->
 			<article class="mini-post">
 				<header>
 					<h3><a href="/{{uri}}">{{title}}</a></h3>
 					<time class="published" datetime="{{date}}">{{date.formatted}}</time>
-					<a href="{{author_url}}#{{author}}" class="author"><img src="/images/{{author_image}}" alt="" /></a>
+					<a href="{{author_url}}#{{author}}" class="author"><span class="name">{{author}}</span><img src="/images/{{author_image}}" alt="" /></a>
 				</header>
 				<a href="/{{uri}}" class="image"><img src="/images/{{image {image:'post.jpg'} }}" alt="" /></a>
 			</article>{{/dynamic_list}}
