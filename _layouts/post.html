@@ -22,8 +22,18 @@
 		</ul>
 		
 	</footer>
+	{{#has_nextprev}}<!--nextprev plugin-->
+	<div style="text-align:right;margin-bottom:2em">
+	{{#prev}}
+		<a href="/{{uri}}" class="button 3u"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Previous</a>
+	{{/prev}}
+	{{#next}}
+		<a href="/{{uri}}" class="button 3u">Next <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+	{{/next}}
+	</div>
+	{{/has_nextprev}}
 {{#social.disqus}}
-<div id="disqus_thread"><a href="#" onclick="return disqus();" id="show_comments" class="button icon fa-comment">Show Comments</a> </div>
+<div id="disqus_thread"><a href="#" onclick="return disqus();" id="show_comments" class="button icon fa-comment 12u">Show Comments</a> </div>
 <script type="text/javascript">
 	var disqus_loaded = false;
 	var disqus_shortname = '{{{social.disqus}}}';
