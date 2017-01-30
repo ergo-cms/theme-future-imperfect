@@ -3442,3 +3442,12 @@
 			}
 
 		}
+
+
+ul.pagination {margin:1em 0;padding:0;list-style:none; border:1px solid rgba(0,0,0,0.2);display:table;background-color:white;}
+ul.pagination li {margin:0;padding:0;height:auto;display:table-cell;}
+ul.pagination a{ color:#333; margin:0; padding:0.3em 0.7em;display: inline-block; border-left:1px solid rgba(0,0,0,0.2);}
+ul.pagination li:first-child a{border-left:0px;}
+ul.pagination a:hover{background-color:rgba(0,0,0,0.2);text-decoration: none;}
+ul.pagination li.active {background-color:rgba(0,0,0,0.1); }
+ul .disabled a { color:#ccc !important; cursor:not-allowed;}

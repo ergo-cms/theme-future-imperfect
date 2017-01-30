@@ -8,7 +8,7 @@
 
 <section>
 	<div class="mini-posts">
-		{{#dynamic_list}}<!-- Mini Post -->
+		{{#dynamic_list @auto_paginate}}<!-- Mini Post -->
 			<article class="mini-post">
 				<header>
 					<h3><a href="/{{uri}}">{{title}}</a></h3>
@@ -18,6 +18,16 @@
 				<a href="/{{uri}}" class="image"><img src="/images/{{image {image:'post.jpg'} }}" alt="" /></a>
 			</article>{{/dynamic_list}}
 	</div>
+{{#paginated}}
+	<ul class="pagination">
+		{{#first}}<li><a href="/{{uri}}">&laquo;</a></li>{{else}}<li class="disabled"><a href="#">&laquo;</a></li>{{/first}}
+		{{#prev}}<li><a href="/{{uri}}">&lsaquo;</a></li>{{else}}{{#paginate_nextprev}}<li class="disabled"><a href="#">&lsaquo;</a></li>{{/paginate_nextprev}}{{/prev}}
+		{{#item}}
+		<li {{#active}}class="active"{{/active}}><a href="/{{uri}}">{{page}}</a></li>{{/item}}
+		{{#next}}<li><a href="/{{uri}}">&rsaquo;</a></li>{{else}}{{#paginate_nextprev}}<li class="disabled"><a href="#">&rsaquo;</a></li>{{/paginate_nextprev}}{{/next}}
+		{{#last}}<li><a href="/{{uri}}">&raquo;</a></li>{{else}}<li class="disabled"><a href="#">&raquo;</a></li>{{/last}}
+	</ul>
+{{/paginated}}
 </section>	
 
 {{> footer.inc }}
