@@ -6,7 +6,7 @@
 	</section>
 {{/list_hide_content}}
 
-{{#dynamic_list}}
+{{#dynamic_list @auto_paginate }}
 <section>
 	<h2 id="{{key}}"><a href="#{{key}}">{{key}}</a></h2>
 	<div class="mini-posts">
@@ -22,5 +22,14 @@
 			</article>{{/value}}
 	</div>
 </section>{{/dynamic_list}}
-
+{{#paginated}}
+	<ul class="pagination">
+		{{#first}}<li><a href="/{{uri}}">&laquo;</a></li>{{else}}<li class="disabled"><a href="#">&laquo;</a></li>{{/first}}
+		{{#prev}}<li><a href="/{{uri}}">&lsaquo;</a></li>{{else}}{{#paginate_nextprev}}<li class="disabled"><a href="#">&lsaquo;</a></li>{{/paginate_nextprev}}{{/prev}}
+		{{#item}}
+		<li {{#active}}class="active"{{/active}}><a href="/{{uri}}">{{page}}</a></li>{{/item}}
+		{{#next}}<li><a href="/{{uri}}">&rsaquo;</a></li>{{else}}{{#paginate_nextprev}}<li class="disabled"><a href="#">&rsaquo;</a></li>{{/paginate_nextprev}}{{/next}}
+		{{#last}}<li><a href="/{{uri}}">&raquo;</a></li>{{else}}<li class="disabled"><a href="#">&raquo;</a></li>{{/last}}
+	</ul>
+{{/paginated}}
 {{> footer.inc }}
