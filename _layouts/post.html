@@ -8,10 +8,10 @@
 		</div>
 		<div class="meta">
 			<time class="published" datetime="{{date}}">{{date.formatted}}</time>
-			<a href="{{author_url}}#{{author}}" class="author"><span class="name">{{author}}</span><img src="/images/{{author_image}}" alt="" /></a>
+			<a href="{{author_url}}#{{author}}" class="author"><span class="name">{{author}}</span><img src="/images/{{author_image #safe_thumb{w:64} }}" alt="" /></a>
 		</div>
 	</header>
-	<span class="image featured"><img src="/images/{{image {image:'post.jpg'} }}" alt="" /></span>
+	<span class="image featured"><img src="/images/{{image}}" alt="" /></span>
 	{{{content}}}
 	<footer>
 		<ul class="stats">

@@ -15,10 +15,10 @@
 			</div>
 			<div class="meta">
 				<time class="published" datetime="{{date}}">{{date.formatted}}</time>
-				<a href="{{author_url}}#{{author}}" class="author"><span class="name">{{author}}</span><img src="/images/{{author_image}}" alt="" /></a>
+				<a href="{{author_url}}#{{author}}" class="author"><span class="name">{{author}}</span><img src="/images/{{author_image #safe_thumb{w:64} }}" alt="" /></a>
 			</div>
 		</header>
-		<a href="/{{uri}}" class="image featured"><img src="images/{{image {image:'post.jpg'} }}" alt="" /></a>
+		<a href="/{{uri}}" class="image featured"><img src="/images/{{image #safe_thumb{w:720} }}" srcset="{{image #safe_srcset{w:'300,512,720,1152'} }}" sizes="(max-width:1280px) 95vw, 60vw"  alt="" /></a>
 		{{{short_content}}}
 		<footer>
 			<ul class="actions">
@@ -47,9 +47,9 @@
 							<header>
 								<h3><a href="/{{uri}}">{{title}}</a></h3>
 								<time class="published" datetime="{{date}}">{{date.formatted}}</time>
-								<a href="{{author_url}}#{{author}}" class="author"><span class="name">{{author}}</span><img src="/images/{{author_image}}" alt="" /></a>
+								<a href="{{author_url}}#{{author}}" class="author"><span class="name">{{author}}</span><img src="/images/{{author_image #safe_thumb{w:64} }}" alt="" /></a>
 							</header>
-							<a href="/{{uri}}" class="image"><img src="/images/{{image {image:'post.jpg'} }}" alt="" /></a>
+							<a href="/{{uri}}" class="image"><img src="/images/{{image #safe_thumb{w:720} }}" srcset="{{image #safe_srcset{w:'300,512,720,1152'} }}" sizes="(max-width:480px) 100vw, (max-width:1280px) 50vw, 35vw"  alt="" /></a>
 						</article>{{/popular}}
 				</div>
 			</section>	
@@ -62,9 +62,9 @@
 							<header>
 								<h3><a href="/{{uri}}">{{title}}</a></h3>
 								<time class="published" datetime="{{date}}">{{date.formatted}}</time>
-								<a href="{{author_url}}#{{author}}" class="author"><span class="name">{{author}}</span><img src="/images/{{author_image}}" alt="" /></a>
+								<a href="{{author_url}}#{{author}}" class="author"><span class="name">{{author}}</span><img src="/images/{{author_image #safe_thumb{w:64} }}" alt="" /></a>
 							</header>
-							<a href="/{{uri}}" class="image"><img src="/images/{{image {image:'post.jpg'} }}" alt="" /></a>
+							<a href="/{{uri}}" class="image"><img src="/images/{{image  #safe_thumb{w:72}  }}" alt="" /></a>
 						</article>
 					</li>{{/blog}}
 
